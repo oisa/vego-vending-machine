@@ -13,7 +13,7 @@ I've attempted the solution using React not only due to its relevance to the com
 
 I've opted for the GUI as I wanted to create the experience and see how the solution could materialise here. Users can input the coins they have and will see their total credit amount calculated in the dark brown box. Users can then select from the 3 available options, and will be able to retrieve their desired chocolate(s).
 
-Users' change will be calculated on purchase and maintained within their total credit.
+Users' change will be calculated on purchase and maintained within their total credit if they wish to purchase more chocolates (if they have the change!).
 
 ### Error handling
 Users will not be able to proceed with their order, retrieving their desired chocolate until either an equal or greater amount of credit is input by the user via the preset coin amounts. This also decreases the chance of user error during the input process, stopping prospects of a 5c piece from being input.
