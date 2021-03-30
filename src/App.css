@@ -246,7 +246,7 @@ h3 {
   bottom: 60px;
 }
 
-/* ----- Helpers ----- */
+/* ----- Helpers & Other Styles ----- */
 
 .unavailable {
   opacity: 0.2;
@@ -259,4 +259,14 @@ h3 {
 
 .hide {
   display: none;
+}
+
+::-moz-selection {
+  color: var(--secondary);
+  background: rgba(var(--quaternary-rgb), 0.9);
+}
+
+::selection {
+  color: var(--secondary);
+  background: rgba(var(--quaternary-rgb), 0.9);
 }

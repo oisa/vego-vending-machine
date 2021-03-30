@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# Vego Vending Machine 🍫
+### 100% Vegan Chocolates
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Screenshot Main Shot](public/vego-vegan-chocolate-vending-machine-screenshot.png)
 
-## Available Scripts
+## Live demo
 
-In the project directory, you can run:
+Pick your favourite, 100% vegan, chocolates here: [Visit the Vego Vending Machine](https://oisa.github.io/vego-vending-machine/).
 
-### `npm start`
+## General Notes
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+I've attempted the solution using React not only due to its relevance to the company, though also due to my goal of learning React as much as I possibly can.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+I've opted for the GUI as I wanted to create the experience and see how the solution could materialise here. Users can input the coins they have and will see their total credit amount calculated in the dark brown box. Users can then select from the 3 available options, and will be able to retrieve their desired chocolate(s).
 
-### `npm test`
+Users' change will be calculated on purchase and maintained within their total credit.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Error handling
+Users will not be able to proceed with their order, retrieving their desired chocolate until either an equal or greater amount of credit is input by the user via the preset coin amounts. This also decreases the chance of user error during the input process, stopping prospects of a 5c piece from being input.
 
-### `npm run build`
+### Testing
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+I had learnt TDD within vanilla JS environment, so writing effective tests in React this round was new for me so it doesn't reflect the attempt and trying to test all the critical functions in the app. This will be worked on moving forward!
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Additional features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Ability for users to retrieve their change from the vending machine at any point.
+- A 'total chocolate bars' section showing all the chocolate bars the user has purchased in a session.
 
-### `npm run eject`
+## Areas that need work
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Better testing. As mentioned above, ideally I'd like to test all functions in the app, particularly the ones that relate to clearly defined requirements within the brief (in this case, figuring out how to test the system to not allow for the possibility of a 5c coin entry from the user).
+- I used a class component here, though perhaps a functional component using hooks to store users' choices may be ultimately the cleanest solution. I ran with the class component as this was the initial basis of my React knowledge, however I aim to continue to increase my understanding as to which is best, and when and why they should be used.
+- Responsiveness - I didn't dedicate time to add media queries for the optimal experience on mobile for the user. I have hopefully arranged the elements on the page to allow for this task not to be too large.
+- I considered hiding the chocolates until the user had inputted enough to afford a given chocolate bar, however given there are only 3 options, this wasn't a great user experience given the initial load of the page would mean all chocolate bars would be faded/hidden. Instead I opted for error messages to show if they didn't satisfy the requirements of a purchase.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Thank you and full credit for the branding to [Vego](https://vego-chocolate.com/au), a vegan chocolate brand with lots of great products. You will also note that the images don't exactly show the flavours mentioned - if the context were real, this would of course show the correct flavours :)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+I hope you enjoy the Vego Vending Machine! 🍫
