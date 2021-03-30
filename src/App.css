@@ -1,38 +1,64 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* ----- Global Styles ----- */
+
+:root {
+  --primary: #7f878e;
+  --primary-rgb: 127, 135, 142;
+  --secondary: #FFF7F1;
+  --secondary-rgb: 255, 247, 241;
+  --tertiary: #32231A;
+  --tertiary-rgb: 50, 35, 26;
+  --quaternary: #fc6c24;
+  --quaternary-rgb: 252, 108, 36;
+
+  --font-large: 26px;
+  --font-medium-large: 20px;
+  --font-medium: 14px;
+  --font-normal: 12px;
+  --font-small: 10px;
+
+  --line-thick: 4px;
+  --line-medium: 3px;
+  --line-thin: 2px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body, html{
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  font-family: 'Space Mono', monospace;
+  color: var(--primary);
+  background-color: var(--tertiary);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.vending-machine {
+  margin: auto;
+  width: 750px;
+  height: 650px;
+  background-color: var(--secondary);
+  border-radius: 30px;
+  border: 10px solid var(--quaternary);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* ----- Signage ----- */
+
+.signage {
+  font-weight: 800;
+  font-size: var(--font-large);
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.signage > p {
+  margin: 10px;
+  font-style: italic;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.signage > img {
+  margin-top: 10px;
+  max-width: 300px;
 }
