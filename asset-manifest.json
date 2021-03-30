@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/vego-vending-machine/static/css/main.afc66e6c.chunk.css",
+    "main.js": "/vego-vending-machine/static/js/main.1feae15d.chunk.js",
+    "main.js.map": "/vego-vending-machine/static/js/main.1feae15d.chunk.js.map",
+    "runtime-main.js": "/vego-vending-machine/static/js/runtime-main.65ca8f26.js",
+    "runtime-main.js.map": "/vego-vending-machine/static/js/runtime-main.65ca8f26.js.map",
+    "static/js/2.6a51be98.chunk.js": "/vego-vending-machine/static/js/2.6a51be98.chunk.js",
+    "static/js/2.6a51be98.chunk.js.map": "/vego-vending-machine/static/js/2.6a51be98.chunk.js.map",
+    "static/js/3.0e1b63b1.chunk.js": "/vego-vending-machine/static/js/3.0e1b63b1.chunk.js",
+    "static/js/3.0e1b63b1.chunk.js.map": "/vego-vending-machine/static/js/3.0e1b63b1.chunk.js.map",
+    "index.html": "/vego-vending-machine/index.html",
+    "static/css/main.afc66e6c.chunk.css.map": "/vego-vending-machine/static/css/main.afc66e6c.chunk.css.map",
+    "static/js/2.6a51be98.chunk.js.LICENSE.txt": "/vego-vending-machine/static/js/2.6a51be98.chunk.js.LICENSE.txt",
+    "static/media/caramel-vego-chocolate-bar.feb85d52.png": "/vego-vending-machine/static/media/caramel-vego-chocolate-bar.feb85d52.png",
+    "static/media/hazelnut-vego-chocolate-bar.b3c44f7a.png": "/vego-vending-machine/static/media/hazelnut-vego-chocolate-bar.b3c44f7a.png",
+    "static/media/logo.a99f1170.svg": "/vego-vending-machine/static/media/logo.a99f1170.svg",
+    "static/media/raw-vego-chocolate-bar.89c084f3.png": "/vego-vending-machine/static/media/raw-vego-chocolate-bar.89c084f3.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.65ca8f26.js",
+    "static/js/2.6a51be98.chunk.js",
+    "static/css/main.afc66e6c.chunk.css",
+    "static/js/main.1feae15d.chunk.js"
+  ]
+}
