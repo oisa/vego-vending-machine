@@ -237,6 +237,7 @@ h3 {
 
 .error-message {
   position: absolute;
+  width: 240px;
   text-align: right;
   font-size: var(--font-medium);
   font-style: italic;

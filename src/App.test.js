@@ -1,8 +1,11 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('Includes only 10c, 20c, 50c, $1 or $2.', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(screen.getByText('10c')).toBeInTheDocument();
+  expect(screen.getByText('20c')).toBeInTheDocument();
+  expect(screen.getByText('50c')).toBeInTheDocument();
+  expect(screen.getByText('$1')).toBeInTheDocument();
+  expect(screen.getByText('$2')).toBeInTheDocument();
 });

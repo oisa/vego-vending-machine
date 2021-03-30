@@ -21,6 +21,10 @@ class App extends Component {
     }
   }
 
+  test(n1, n2) {
+    return (n1 + n2);
+  }
+
   render() {
 
     const newOrder = () => {
@@ -36,10 +40,19 @@ class App extends Component {
 
     const updatePrice = (e) => {
 
-      this.setState({
-        credit: this.state.credit + Number(e.target.dataset.value),
-        errorMessage: "",
-      });
+      let input = Number(e.target.dataset.value)
+
+      // Accounts for if user manages an input other than the accepted denominations
+      if (input === 0.10 || input === 0.20 || input === 0.50 || input === 1 || input === 2) {
+        this.setState({
+          credit: this.state.credit + input,
+          errorMessage: "",
+        });
+      } else {
+        this.setState({
+          errorMessage: "10c, 20c, 50c, $1 or $2 accepted only."
+        })
+      }
 
     }
 
@@ -54,6 +67,7 @@ class App extends Component {
 
     const processOrder = () => {
 
+      // Only processes the order if credit is larger than or equal to (not including if both ar $0) the selected chocolate. Also only runs if user has selected a chocolate.
       if (this.state.credit >= this.state.selectionPrice && this.state.credit != 0 && this.state.selection != "") {
         this.setState({
           orderComplete: true,
