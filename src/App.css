@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+
 /* ----- Global Styles ----- */
 
 :root {
@@ -59,9 +60,10 @@ h3 {
   margin: 20px 0 0 0;
 }
 
-/* ----- Signage ----- */
 
-.signage {
+/* ----- Branding ----- */
+
+.branding {
   font-weight: 800;
   font-size: var(--font-large);
   display: flex;
@@ -70,10 +72,11 @@ h3 {
   align-items: center;
 }
 
-.signage > img {
+.branding > img {
   margin-top: 12px;
   max-width: 300px;
 }
+
 
 /* ----- Money Input & Total ----- */
 
@@ -129,6 +132,7 @@ h3 {
   font-size: var(--font-large);
 }
 
+
 /* ----- Chocolates and Output ----- */
 
 .chocolates-container {
@@ -167,15 +171,6 @@ h3 {
   margin-top: 3px;
 }
 
-.unavailable {
-  opacity: 0.2;
-}
-
-.selected {
-  border-radius: 30px;
-  border: var(--line-medium) solid var(--quaternary);
-}
-
 .retrieve-container {
   display: flex;
   flex-direction: row;
@@ -198,10 +193,6 @@ h3 {
   color: var(--secondary);
 }
 
-.hide {
-  display: none;
-}
-
 .success-message {
   position: absolute;
   background-color: rgba(var(--secondary-rgb), 0.95);
@@ -216,7 +207,7 @@ h3 {
 }
 
 .success-message > img {
-  width: 300px;
+  width: 350px;
 }
 
 .more-chocolate-btn {
@@ -228,4 +219,24 @@ h3 {
   border-radius: 20px;
   border: var(--line-medium) solid var(--quaternary);
   transition: all 0.25s;
+}
+
+.error-message {
+  position: absolute;
+  right: 30px;
+}
+
+/* ----- Helpers ----- */
+
+.unavailable {
+  opacity: 0.2;
+}
+
+.selected {
+  border-radius: 30px;
+  border: var(--line-medium) solid var(--quaternary);
+}
+
+.hide {
+  display: none;
 }

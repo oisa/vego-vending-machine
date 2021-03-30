@@ -13,18 +13,32 @@ class App extends Component {
     super();
     this.state = {
       selection: "",
+      selectionPrice: 0,
       orderComplete: false,
       credit: 0,
       change: 0,
+      errorMessage: "",
     }
   }
 
   render() {
 
+    const newOrder = () => {
+
+      this.setState({
+        selection: "",
+        orderComplete: false,
+        credit: 0,
+        errorMessage: "",
+      })
+
+    }
+
     const updatePrice = (e) => {
 
       this.setState({
-        credit: this.state.credit + Number(e.target.dataset.value)
+        credit: this.state.credit + Number(e.target.dataset.value),
+        errorMessage: "",
       });
 
     }
@@ -32,8 +46,30 @@ class App extends Component {
     const updateSelection = (e) => {
 
       this.setState({
-        selection: e.target.dataset.value
+        selection: e.target.dataset.name,
+        selectionPrice: Number(e.target.dataset.value)
       });
+
+    }
+
+    const processOrder = () => {
+
+      if (this.state.credit >= this.state.selectionPrice && this.state.credit != 0 && this.state.selection != "") {
+        this.setState({
+          orderComplete: true,
+          errorMessage: "",
+        });
+      } else {
+        this.setState({
+          errorMessage: "Not enough dollarydoos!",
+        })
+      }
+
+      if (this.state.selection === "") {
+        this.setState({
+          errorMessage: "Make a selection first!"
+        })
+      }
 
     }
 
@@ -42,13 +78,17 @@ class App extends Component {
 
         <div className="vending-machine">
 
-        <div className={this.state.orderComplete === "false" ? "success-message hide" : "success-message"}>
-          <img src={ this.state.selection === "raw" ? raw : this.state.selection === "hazelnut" ? hazelnut : this.state.selection === "caramel" ? caramel : {} } />
-          <h2>Enjoy your { this.state.selection } chocolate!</h2>
-          <a className="more-chocolate-btn" href="#">More Chocolate Please! 🍫</a>
-        </div>
+          <div className={this.state.orderComplete === false ? "success-message hide" : "success-message"}>
+            <img src={ this.state.selection === "raw" ? raw : this.state.selection === "hazelnut" ? hazelnut : this.state.selection === "caramel" ? caramel : {} } />
+            <h2>Enjoy your { this.state.selection } chocolate!</h2>
+            <a className="more-chocolate-btn" href="#" onClick={() => newOrder()}>More Chocolate Please! 🍫</a>
+          </div>
 
-          <section className="signage">
+          <div className={this.state.errorMessage != "" ? "error-message" : "error-message hide"}>
+            { this.state.errorMessage }
+          </div>
+
+          <section className="branding">
             <img src={ logo } />
             <h2>Vending Machine</h2>
           </section>
@@ -78,20 +118,20 @@ class App extends Component {
           <section className="selection-container">
 
             <div className="chocolates-container">
-              <div className={this.state.selection === "raw" ? "chocolate selected" : "chocolate"} data-value="raw" onClick={(e) => updateSelection(e)}>
-                <img src={ raw } data-value="raw"/>
-                <p className="title" data-value="raw">Organic Raw</p>
-                <p className="price" data-value="raw">$2.00</p>
+              <div className={this.state.selection === "raw" ? "chocolate selected" : "chocolate"} data-name="raw" onClick={(e) => updateSelection(e)}>
+                <img src={ raw } data-name="raw" data-value="2"/>
+                <p className="title" data-name="raw" data-value="2">Organic Raw</p>
+                <p className="price" data-name="raw" data-value="2">$2.00</p>
               </div>
-              <div className={this.state.selection === "hazelnut" ? "chocolate selected" : "chocolate"} data-value="hazelnut" onClick={(e) => updateSelection(e)}>
-                <img src={ hazelnut } data-value="hazelnut"/>
-                <p className="title" data-value="hazelnut">Hazelnut</p>
-                <p className="price" data-value="hazelnut">$3.10</p>
+              <div className={this.state.selection === "hazelnut" ? "chocolate selected" : "chocolate"} data-name="hazelnut" onClick={(e) => updateSelection(e)}>
+                <img src={ hazelnut } data-name="hazelnut" data-value="3.1"/>
+                <p className="title" data-name="hazelnut" data-value="3.1">Hazelnut</p>
+                <p className="price" data-name="hazelnut" data-value="3.1">$3.10</p>
               </div>
-              <div className={this.state.selection === "caramel" ? "chocolate selected" : "chocolate"} data-value="caramel" onClick={(e) => updateSelection(e)}>
-                <img src={ caramel } data-value="caramel"/>
-                <p className="title" data-value="caramel">Caramel</p>
-                <p className="price" data-value="caramel">$2.50</p>
+              <div className={this.state.selection === "caramel" ? "chocolate selected" : "chocolate"} data-name="caramel" onClick={(e) => updateSelection(e)}>
+                <img src={ caramel } data-name="caramel" data-value="2.5"/>
+                <p className="title" data-name="caramel" data-value="2.5">Caramel</p>
+                <p className="price" data-name="caramel" data-value="2.5">$2.50</p>
               </div>
             </div>
 
@@ -99,7 +139,7 @@ class App extends Component {
 
           <section className="retrieve-container">
 
-            <a className="retrieve-btn" href="#">Retrieve Chocolate! 🍫</a>
+            <a className="retrieve-btn" href="#" onClick={() => processOrder()}>Get Chocolate! 🍫</a>
 
           </section>
 
