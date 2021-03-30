@@ -1,12 +1,15 @@
+// Assets
 import logo from './assets/logo.svg';
-import './App.css';
+import raw from './assets/raw-vego-chocolate-bar.png';
+import caramel from './assets/caramel-vego-chocolate-bar.png';
+import hazelnut from './assets/hazelnut-vego-chocolate-bar.png';
 
 // Components
-
+import './App.css';
 
 function App() {
 
-
+  
 
   return (
     <div className="main-container">
@@ -14,7 +17,7 @@ function App() {
       <div className="vending-machine">
 
         <section className="signage">
-          <img src={logo} />
+          <img src={ logo } />
           <p>Vending Machine</p>
         </section>
 
@@ -36,6 +39,29 @@ function App() {
               $0.20
             </div>
           </div>
+        </section>
+
+        <h3>Choose a chocolate!</h3>
+
+        <section className="selection-container">
+          <div className="chocolates-container">
+            <div className="chocolate">
+              <img src={ raw }/>
+              <p className="title">Organic Raw</p>
+              <p className="price">$2.00</p>
+            </div>
+            <div className="chocolate">
+              <img src={ hazelnut } />
+              <p className="title">Hazelnut</p>
+              <p className="price">$3.10</p>
+            </div>
+            <div className="chocolate">
+              <img src={ caramel }/>
+              <p className="title">Caramel</p>
+              <p className="price">$2.50</p>
+            </div>
+          </div>
+
         </section>
 
       </div>
