@@ -9,3 +9,10 @@ test('Includes only 10c, 20c, 50c, $1 or $2.', () => {
   expect(screen.getByText('$1')).toBeInTheDocument();
   expect(screen.getByText('$2')).toBeInTheDocument();
 });
+
+test('Includes chocolate bars Organic Raw, Hazelnut and Caramel', () => {
+  render(<App />);
+  expect(screen.getByText('Organic Raw')).toBeInTheDocument();
+  expect(screen.getByText('Hazelnut')).toBeInTheDocument();
+  expect(screen.getByText('Caramel')).toBeInTheDocument();
+});
