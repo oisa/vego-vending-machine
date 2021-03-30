@@ -82,6 +82,7 @@ class App extends Component {
             <img src={ this.state.selection === "raw" ? raw : this.state.selection === "hazelnut" ? hazelnut : this.state.selection === "caramel" ? caramel : {} } />
             <h2>Enjoy your { this.state.selection } chocolate!</h2>
             <a className="more-chocolate-btn" href="#" onClick={() => newOrder()}>More Chocolate Please! 🍫</a>
+            <p>You have ${ this.state.change } change left over.</p> 
           </div>
 
           <div className={this.state.errorMessage != "" ? "error-message" : "error-message hide"}>
